@@ -4,7 +4,6 @@ function randomText() {
   const arr = [
     'gulp',
     'sass',
-    'scss',
     'babel',
     `browser sync`,
     'autoprefixer',

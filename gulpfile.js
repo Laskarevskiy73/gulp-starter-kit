@@ -26,8 +26,9 @@ const buildFolder = 'build';
 
 //          Functions
 //
+
 function html() {
-  return src(`${srcFolder}/*html`)
+  return src(`${srcFolder}/*.html`)
     .pipe(rigger())
     .pipe(htmlmin({ collapseWhitespace: true }))
     .pipe(dest(`${buildFolder}`))
@@ -103,7 +104,7 @@ function server() {
 }
 
 function clean() {
-  return del('./build');
+  return del(buildFolder);
 }
 
 const build = series(clean, parallel(html, style, js, image));
